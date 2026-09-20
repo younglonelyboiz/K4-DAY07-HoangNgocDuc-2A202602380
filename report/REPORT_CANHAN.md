@@ -6,7 +6,7 @@
 
 > **Nộp 1 bản / sinh viên.** Phần nhóm (lựa chọn tài liệu, thiết kế chiến lược, bộ câu hỏi đánh giá, demo) nộp chung 1 bản trong `REPORT_NHOM.md`. Chi tiết thang điểm: `docs/SCORING.md`.
 
-**Tổng điểm phần cá nhân: 60** = Khởi động (5) + Hướng tiếp cận (10) + Hoàn thiện code (30) + Dự đoán độ tương tự (5) + Kết quả truy xuất của tôi (10).
+**Tổng điểm phần cá nhân: 58** = Khởi động (5) + Hướng tiếp cận (10) + Hoàn thiện code (30) + Dự đoán độ tương tự (5) + Kết quả truy xuất của tôi (8).
 
 ---
 
@@ -102,16 +102,13 @@ Vượt qua bộ kiểm thử là điều kiện tính điểm phần này.
 
 Chạy **5 câu hỏi đánh giá của nhóm** trên mã nguồn cá nhân của bạn trong gói `src`. **5 câu hỏi này phải trùng với các thành viên cùng nhóm** (xem `REPORT_NHOM.md`).
 
-> [!NOTE]
-> **Yêu cầu lọc Metadata (Metadata Filtering):** Câu 1, Câu 3, Câu 4 và Câu 5 áp dụng bộ lọc `metadata_filter={"audience": "buyer"}` để lọc trước (pre-filter), loại bỏ hoàn toàn các tài liệu khiếu nại của Người bán (`seller`), đảm bảo kết quả truy xuất chỉ trả về chính sách dành riêng cho Người mua.
-
-| # | Câu hỏi (Query) | Metadata Filter | Top-1 Chunk truy xuất được (tóm tắt) | Điểm Score | Có liên quan không? (Relevant) | Câu trả lời của Agent (tóm tắt) |
-|---|-------|-----------------|--------------------------------|-------|-----------|------------------------|
-| 1 | Thời gian nhận tiền hoàn vào ví ShopeePay là bao lâu sau khi Shopee chấp nhận? | `{"audience": "buyer"}` | `thoi-gian-nhan-tien-hoan.md`: Phương thức thanh toán, tiền hoàn trả được gửi qua... Sau khi Shopee chấp nhận, tiền hoàn vào Ví ShopeePay trong 24 giờ... | 0.7184 | Có (Khớp Gold Doc ở Top 1) | Dựa theo quy định: Tiền sẽ được tự động hoàn vào Ví ShopeePay trong vòng 24 giờ sau khi Shopee chấp nhận yêu cầu. |
-| 2 | Lý do 'Đổi ý' có được áp dụng cho sản phẩm Thiết bị Điện tử & Công nghệ có niêm phong/kích hoạt/bảo hành không? | Không lọc | `quy-trinh-tra-hang-hoan-tien-nguoi-ban.md`: Danh mục Sản Phẩm Hạn Chế Bao gồm Các Sản Phẩm Thiết bị Điện tử & Công nghệ (Có niêm phong/Kích hoạt/Bảo hành)... | 0.5612 | Có (Khớp Gold Doc ở Top 1) | Dựa theo quy định: Không được áp dụng trả hàng với lý do 'Đổi ý' đối với các sản phẩm Thiết bị Điện tử & Công nghệ này. |
-| 3 | Khi Shopee chấp nhận phương án Trả hàng & Hoàn tiền, thời hạn xử lý là bao lâu? | `{"audience": "buyer"}` | `gui-yeu-cau-tra-hang-hoan-tien.md`: Thời gian xử lý trong 3 - 5 ngày làm việc. (Top 3 chứa `quy-trinh-shopee-xu-ly-yeu-cau-tra-hang.md` mốc 6 ngày gửi hàng, score 0.7157)... | 0.7445 | Có (Thuộc Top-3) | Dựa theo quy định: Người mua cần hoàn tất gửi trả hàng trong vòng 6 ngày kể từ thông báo; thời gian Shopee xử lý khoảng 3-5 ngày. |
-| 4 | Các bước gửi yêu cầu Trả hàng/Hoàn tiền trực tiếp tại trang đơn hàng trên ứng dụng Shopee như thế nào? | `{"audience": "buyer"}` | `gui-yeu-cau-tra-hang-hoan-tien.md`: Hướng dẫn gửi yêu cầu Trả hàng/Hoàn tiền, Cách 1: Gửi yêu cầu trực tiếp tại trang đơn hàng (score 0.7089, Top 2)... | 0.7204 | Có (Thuộc Top-2 nhờ Query Expansion) | Dựa theo quy định: Mở ứng dụng Shopee, vào Tôi > chọn đơn hàng cần khiếu nại > chọn Trả hàng/Hoàn tiền và làm theo 8 bước hướng dẫn. |
-| 5 | Khi khiếu nại hàng bị bể vỡ hoặc lỗi, video mở kiện hàng cần thể hiện rõ những thông tin gì? | `{"audience": "buyer"}` | `chuan-bi-bang-chung-tra-hang.md`: Lưu ý khi cần gửi trả sản phẩm, quay lại video đóng/mở kiện hàng với các mặt, thấy rõ mã vận đơn và chi tiết lỗi... | 0.5981 | Có (Khớp Gold Doc ở Top 1) | Dựa theo quy định: Video cần quay đủ các mặt kiện hàng, thấy rõ mã vận đơn trên kiện hàng và cận cảnh số lượng/chi tiết bể vỡ của sản phẩm. |
+| # | Câu hỏi (Query) | Top-1 Chunk truy xuất được (tóm tắt) | Điểm Score | Có liên quan không? (Relevant) | Câu trả lời của Agent (tóm tắt) |
+|---|-------|--------------------------------|-------|-----------|------------------------|
+| 1 | Thời gian nhận tiền hoàn vào ví ShopeePay là bao lâu sau khi Shopee chấp nhận? | `thoi-gian-nhan-tien-hoan.md`: Phương thức thanh toán, tiền hoàn trả được gửi qua... Sau khi Shopee chấp nhận, tiền hoàn vào Ví ShopeePay trong 24 giờ... | 0.7184 | Có (Khớp Gold Doc ở Top 1) | Dựa theo quy định: Tiền sẽ được tự động hoàn vào Ví ShopeePay trong vòng 24 giờ sau khi Shopee chấp nhận yêu cầu. |
+| 2 | Lý do 'Đổi ý' có được áp dụng cho sản phẩm Thiết bị Điện tử & Công nghệ có niêm phong/kích hoạt/bảo hành không? | `quy-trinh-tra-hang-hoan-tien-nguoi-ban.md`: Danh mục Sản Phẩm Hạn Chế Bao gồm Các Sản Phẩm Thiết bị Điện tử & Công nghệ (Có niêm phong/Kích hoạt/Bảo hành)... | 0.5612 | Có (Khớp Gold Doc ở Top 1) | Dựa theo quy định: Không được áp dụng trả hàng với lý do 'Đổi ý' đối với các sản phẩm Thiết bị Điện tử & Công nghệ này. |
+| 3 | Khi Shopee chấp nhận phương án Trả hàng & Hoàn tiền, thời hạn xử lý là bao lâu? | `gui-yeu-cau-tra-hang-hoan-tien.md`: Thời gian xử lý trong 3 - 5 ngày làm việc. (Top 3 chứa `quy-trinh-shopee-xu-ly-yeu-cau-tra-hang.md` mốc 6 ngày gửi hàng, score 0.7157)... | 0.7445 | Có (Thuộc Top-3) | Dựa theo quy định: Người mua cần hoàn tất gửi trả hàng trong vòng 6 ngày kể từ thông báo; thời gian Shopee xử lý khoảng 3-5 ngày. |
+| 4 | Các bước gửi yêu cầu Trả hàng/Hoàn tiền trực tiếp tại trang đơn hàng trên ứng dụng Shopee như thế nào? | `gui-yeu-cau-tra-hang-hoan-tien.md`: Hướng dẫn gửi yêu cầu Trả hàng/Hoàn tiền, Cách 1: Gửi yêu cầu trực tiếp tại trang đơn hàng (score 0.7089, Top 2)... | 0.7204 | Có (Thuộc Top-2 nhờ Query Expansion) | Dựa theo quy định: Mở ứng dụng Shopee, vào Tôi > chọn đơn hàng cần khiếu nại > chọn Trả hàng/Hoàn tiền và làm theo 8 bước hướng dẫn. |
+| 5 | Khi khiếu nại hàng bị bể vỡ hoặc lỗi, video mở kiện hàng cần thể hiện rõ những thông tin gì? | `chuan-bi-bang-chung-tra-hang.md`: Lưu ý khi cần gửi trả sản phẩm, quay lại video đóng/mở kiện hàng với các mặt, thấy rõ mã vận đơn và chi tiết lỗi... | 0.5981 | Có (Khớp Gold Doc ở Top 1) | Dựa theo quy định: Video cần quay đủ các mặt kiện hàng, thấy rõ mã vận đơn trên kiện hàng và cận cảnh số lượng/chi tiết bể vỡ của sản phẩm. |
 
 **Bao nhiêu câu hỏi trả về chunk có liên quan trong top-3?** 5 / 5 (Đạt tuyệt đối 100%: 3 câu Top-1, 1 câu Top-2, 1 câu Top-3)
 

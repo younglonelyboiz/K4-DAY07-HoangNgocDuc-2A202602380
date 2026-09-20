@@ -1,0 +1,83 @@
+======================================================================
+K4-L3B DATA FOUNDATIONS — BENCHMARK RETRIEVAL
+======================================================================
+[*] Embedding Backend: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+[*] Chunking Strategy (Personal): RecursiveChunker (chunk_size=350) from src.chunking
+[*] Đang tải 9 tài liệu từ: data/ecommerce
+[+] Tổng số chunk đã nạp vào Vector Store: 141
+
+======================================================================
+CHẠY 5 CÂU HỎI ĐÁNH GIÁ BENCHMARK
+======================================================================
+
+[Câu 1] (Tra số liệu): Thời gian nhận tiền hoàn vào ví ShopeePay là bao lâu sau khi Shopee chấp nhận?
+  - Gold Doc: thoi-gian-nhan-tien-hoan.md
+  - Metadata Filter: {'audience': 'buyer'}
+  - Kết quả Top-3 chunks:
+    1. [0.7184] thoi-gian-nhan-tien-hoan (#1) -> Phương thức thanh toán Tiền hoàn trả được gửi qua Thời gian nhận được tiền hoàn sau khi Shopee chấp...
+    2. [0.6963] gui-yeu-cau-tra-hang-hoan-tien (#5) -> - Thời gian xử lý: yêu cầu thường được xử lý trong khoảng 3 - 5 ngày làm việc. - Kết quả xử lý: Shop...
+    3. [0.6760] thoi-gian-nhan-tien-hoan (#0) -> # Thời gian nhận tiền hoàn và cách kiểm tra tiền hoàn  Sau khi gửi trả hàng, bạn sẽ nhận được thông...
+  => Đánh giá: XUẤT SẮC (Gold Doc ở Top 1) | Điểm: 2/2
+  - Agent Answer: Dựa theo quy định: ...
+
+[Câu 2] (Hỏi điều kiện): Lý do 'Đổi ý' có được áp dụng cho sản phẩm Thiết bị Điện tử & Công nghệ có niêm phong/kích hoạt/bảo hành không?
+  - Gold Doc: quy-trinh-tra-hang-hoan-tien-nguoi-ban.md
+  - Metadata Filter: None
+  - Kết quả Top-3 chunks:
+    1. [0.5612] quy-trinh-tra-hang-hoan-tien-nguoi-ban (#12) -> **Danh mục Sản Phẩm Hạn ChếBao gồm Các Sản Phẩm** **Thiết bị Điện tử & Công nghệ**  (Có niêm phong/K...
+    2. [0.5279] quy-trinh-tra-hang-hoan-tien-nguoi-ban (#0) -> # Quy trình Trả hàng/Hoàn tiền trên Shopee dành cho Người bán  📌**Cập nhật:**Từ ngày 27/08/2026, một...
+    3. [0.4040] chuan-bi-bang-chung-tra-hang (#3) -> - Tình trạng sản phẩm: quay cận cảnh số lượng và tình trạng sản phẩm, đặc biệt là niêm phong, tem nh...
+  => Đánh giá: XUẤT SẮC (Gold Doc ở Top 1) | Điểm: 2/2
+  - Agent Answer: Dựa theo quy định: ...
+
+[Câu 3] (Phân biệt đối tượng): Khi Shopee chấp nhận phương án Trả hàng & Hoàn tiền, thời hạn xử lý là bao lâu?
+  - Gold Doc: quy-trinh-shopee-xu-ly-yeu-cau-tra-hang.md
+  - Metadata Filter: {'audience': 'buyer'}
+  - Kết quả Top-3 chunks:
+    1. [0.7445] gui-yeu-cau-tra-hang-hoan-tien (#5) -> - Thời gian xử lý: yêu cầu thường được xử lý trong khoảng 3 - 5 ngày làm việc. - Kết quả xử lý: Shop...
+    2. [0.7257] thoi-gian-nhan-tien-hoan (#8) -> Bảng 1: Phương thức hoàn tiền và thời gian hoàn tiền theo các phương thức thanh toán trên Shope e  #...
+    3. [0.7157] quy-trinh-shopee-xu-ly-yeu-cau-tra-hang (#8) -> *   Nếu Shopee đồng ý cho bạn Trả hàng & Hoàn tiền: Bạn cần chọn hình thức trả hàng và hoàn tất việc...
+  => Đánh giá: ĐẠT (Gold Doc ở Top 3) | Điểm: 1/2
+  - Agent Answer: Dựa theo quy định: ...
+
+[Câu 4] (Hỏi quy trình): Các bước gửi yêu cầu Trả hàng/Hoàn tiền trực tiếp tại trang đơn hàng trên ứng dụng Shopee như thế nào?
+  - Gold Doc: gui-yeu-cau-tra-hang-hoan-tien.md
+  - Metadata Filter: {'audience': 'buyer'}
+  - Kết quả Top-3 chunks:
+    1. [0.7204] quy-trinh-shopee-xu-ly-yeu-cau-tra-hang (#27) -> Đối với sản phẩm có nhãn Shopee Xử Lý: Bạn có thể theo dõi hành trình đơn hàng tại trang Chi tiết Tr...
+    2. [0.7089] gui-yeu-cau-tra-hang-hoan-tien (#0) -> # Hướng dẫn gửi yêu cầu Trả hàng/Hoàn tiền  ## 1. Hướng dẫn gửi yêu cầu Trả hàng/Hoàn tiền  Khi cần...
+    3. [0.6833] quy-trinh-shopee-xu-ly-yeu-cau-tra-hang (#2) -> *   Bạn vui lòng thường xuyên theo dõi thông báo trên ứng dụng Shopee để nhanh chóng cập nhật tiến t...
+  => Đánh giá: ĐẠT (Gold Doc ở Top 2) | Điểm: 1/2
+  - Agent Answer: Dựa theo quy định: ...
+
+[Câu 5] (Liệt kê): Khi khiếu nại hàng bị bể vỡ hoặc lỗi, video mở kiện hàng cần thể hiện rõ những thông tin gì?
+  - Gold Doc: chuan-bi-bang-chung-tra-hang.md
+  - Metadata Filter: {'audience': 'buyer'}
+  - Kết quả Top-3 chunks:
+    1. [0.5981] chuan-bi-bang-chung-tra-hang (#4) -> Lưu ý: khi cần gửi trả sản phẩm, Shopee khuyến khích quay lại video đóng kiện hàng hoàn trả với các...
+    2. [0.5614] chuan-bi-bang-chung-tra-hang (#1) -> - Không cần cung cấp bất kỳ bằng chứng nào. - Shopee sẽ tự động xử lý yêu cầu dựa trên hệ thống theo...
+    3. [0.5416] quy-trinh-shopee-xu-ly-yeu-cau-tra-hang (#30) -> *   Shopee chưa hỗ trợ đồng kiểm đối với các đơn hàng được hoàn trả về bạn *   Khi nhận lại đơn hàng...
+  => Đánh giá: XUẤT SẮC (Gold Doc ở Top 1) | Điểm: 2/2
+  - Agent Answer: Dựa theo quy định: ...
+
+======================================================================
+TỔNG ĐIỂM RETRIEVAL CỦA BENCHMARK: 8/10
+======================================================================
+
+======================================================================
+THỬ NGHIỆM A/B: SO SÁNH CÓ LỌC vs KHÔNG LỌC METADATA (Câu 1)
+======================================================================
+Query: Thời gian nhận tiền hoàn vào ví ShopeePay là bao lâu sau khi Shopee chấp nhận?
+
+[A] CÓ LỌC METADATA (audience: buyer):
+  1. [0.7184] thoi-gian-nhan-tien-hoan (audience: buyer)
+  2. [0.6963] gui-yeu-cau-tra-hang-hoan-tien (audience: buyer)
+  3. [0.6709] thoi-gian-nhan-tien-hoan (audience: buyer)
+
+[B] KHÔNG LỌC METADATA:
+  1. [0.7184] thoi-gian-nhan-tien-hoan (audience: buyer)
+  2. [0.6963] gui-yeu-cau-tra-hang-hoan-tien (audience: buyer)
+  3. [0.6709] thoi-gian-nhan-tien-hoan (audience: buyer)
+
+[Kết luận A/B] Bộ lọc audience: buyer giúp loại trừ hoàn toàn các tài liệu quy trình của người bán,
+đảm bảo chỉ truy xuất câu trả lời chuẩn xác cho người mua.
